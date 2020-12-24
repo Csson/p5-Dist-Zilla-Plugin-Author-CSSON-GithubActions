@@ -20,6 +20,8 @@ prereqs:
 plugins:
   - +config: Author::CSSON
 
+  - +remove_plugin: PromptIfStale
+
 ---
 doctype: weaver
 
