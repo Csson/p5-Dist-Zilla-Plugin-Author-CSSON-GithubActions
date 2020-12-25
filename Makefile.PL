@@ -25,7 +25,6 @@ my %WriteMakefileArgs = (
   "NAME" => "Dist::Zilla::Plugin::Author::CSSON::GithubActions",
   "PREREQ_PM" => {
     "Dist::Zilla::File::InMemory" => 0,
-    "Dist::Zilla::Plugin::Author::CSSON::GithubActions" => 0,
     "Dist::Zilla::Role::FileGatherer" => 0,
     "Dist::Zilla::Role::Plugin" => 0,
     "File::ShareDir" => "1.102",
@@ -61,7 +60,6 @@ my %WriteMakefileArgs = (
 
 my %FallbackPrereqs = (
   "Dist::Zilla::File::InMemory" => 0,
-  "Dist::Zilla::Plugin::Author::CSSON::GithubActions" => 0,
   "Dist::Zilla::Role::FileGatherer" => 0,
   "Dist::Zilla::Role::Plugin" => 0,
   "ExtUtils::MakeMaker" => 0,

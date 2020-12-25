@@ -1,8 +1,7 @@
-# This file was auto-generated from iller.yaml by Dist::Iller on 2020-12-25 18:16:08 UTC.
+# This file was auto-generated from iller.yaml by Dist::Iller on 2020-12-25 22:33:55 UTC.
 
 on runtime => sub {
     requires 'Dist::Zilla::File::InMemory' => '0';
-    requires 'Dist::Zilla::Plugin::Author::CSSON::GithubActions' => '0';
     requires 'Dist::Zilla::Role::FileGatherer' => '0';
     requires 'Dist::Zilla::Role::Plugin' => '0';
     requires 'File::ShareDir' => '1.102';
