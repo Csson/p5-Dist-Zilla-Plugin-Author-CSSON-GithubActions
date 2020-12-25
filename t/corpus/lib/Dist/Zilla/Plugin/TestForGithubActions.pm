@@ -9,6 +9,8 @@ with qw/
     Dist::Zilla::Plugin::Author::CSSON::GithubActions::Role::Workflow
 /;
 
+sub main_module { 'Dist::Zilla::Plugin::TestForGithubActions' }
+
 sub filepath { 'share/test-workflow.yml' }
 
 1;
