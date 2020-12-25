@@ -24,7 +24,7 @@ sub filepath { 'share/base-workflow.yml' }
 In dist.ini:
 
     [Author::CSSON::GithubActions]
-    profile_class = Author::CSSON::GithubActions::BaseWorkflow
+    workflow_class = Author::CSSON::GithubActions::BaseWorkflow
 
 =head1 DESCRIPTION
 

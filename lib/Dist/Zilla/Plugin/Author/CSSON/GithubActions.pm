@@ -32,10 +32,10 @@ sub mvp_multivalue_args {
     /;
 }
 
-has profile_class => (
+has workflow_class => (
     is => 'ro',
     required => 1,
-    documentation => q{The 'profile_class' will be prefix with 'Dist::Zilla::Plugin' },
+    documentation => q{The 'workflow_class' will be prefix with 'Dist::Zilla::Plugin' },
 );
 has clear_on_push_branches => (
     is => 'ro',
@@ -86,11 +86,11 @@ has filename => (
 sub _prepare_yaml {
     my $self = shift;
 
-    my $class_name = 'Dist::Zilla::Plugin::' . $self->profile_class;
+    my $class_name = 'Dist::Zilla::Plugin::' . $self->workflow_class;
     load $class_name;
 
-    my $profile = $class_name->new;
-    my $yaml = $class_name->yaml;
+    my $workflow = $class_name->new;
+    my $yaml = $workflow->yaml;
 
     if ($self->clear_on_push_branches && exists $yaml->{'on'}{'push'}{'branches'}) {
         $yaml->{'on'}{'push'}{'branches'} = [];
@@ -159,10 +159,10 @@ __END__
 In dist.ini:
 
     [Author::CSSON::GithubActions]
-    ; profile_class is mandatory (Dist::Zilla::Plugin is prepended when loading it)
-    profile_class = Author::CSSON::GithubActions::BaseWorkflow
+    ; workflow_class is mandatory (Dist::Zilla::Plugin is prepended when loading it)
+    workflow_class = Author::CSSON::GithubActions::BaseWorkflow
 
-    ; the rest is optional, and customizes the workflow defined in the profile_class
+    ; the rest is optional, and customizes the workflow defined in the workflow_class
 
     ; set on.push.branches to an empty list
     clear_on_push_branches = 1

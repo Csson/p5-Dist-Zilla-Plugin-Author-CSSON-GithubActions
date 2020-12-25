@@ -87,7 +87,7 @@ sub make_tzil {
     my $ini = simple_ini(
         { version => '0.0002' },
         [ 'Author::CSSON::GithubActions', {
-            profile_class => 'TestForGithubActions',
+            workflow_class => 'TestForGithubActions',
             %settings,
         }],
         qw/
