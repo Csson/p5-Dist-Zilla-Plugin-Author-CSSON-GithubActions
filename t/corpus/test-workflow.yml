@@ -1,0 +1,29 @@
+---
+filename: 'test-workflow-output.yml'
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  perl-job:
+    name: Perl ${{ matrix.perl-version }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        perl-version:
+          - '5.32'
+        os:
+          - 'ubuntu-latest'
+    container: perldocker/perl-tester:${{ matrix.perl-version }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Dist::Zilla tests
+        run: |
+          dzil authordeps --missing          | cpanm --notest
+          dzil listdeps   --missing --author | cpanm
+          dzil test       --release --author
