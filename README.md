@@ -19,10 +19,10 @@ Version 0.0100, released 2020-12-25.
 In dist.ini:
 
     [Author::CSSON::GithubActions]
-    ; profile_class is mandatory (Dist::Zilla::Plugin is prepended when loading it)
-    profile_class = Author::CSSON::GithubActions::BaseWorkflow
+    ; workflow_class is mandatory (Dist::Zilla::Plugin is prepended when loading it)
+    workflow_class = Author::CSSON::GithubActions::BaseWorkflow
 
-    ; the rest is optional, and customizes the workflow defined in the profile_class
+    ; the rest is optional, and customizes the workflow defined in the workflow_class
 
     ; set on.push.branches to an empty list
     clear_on_push_branches = 1
