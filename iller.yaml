@@ -19,7 +19,6 @@ prereqs:
       - Dist::Zilla::File::InMemory
       - Dist::Zilla::Role::Plugin
       - Dist::Zilla::Role::FileGatherer
-      - Dist::Zilla::Plugin::Author::CSSON::GithubActions
       - File::ShareDir
       - List::AllUtils
       - Module::Load
