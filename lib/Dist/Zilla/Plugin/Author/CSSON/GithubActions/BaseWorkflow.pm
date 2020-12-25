@@ -6,7 +6,7 @@ package Dist::Zilla::Plugin::Author::CSSON::GithubActions::BaseWorkflow;
 
 # ABSTRACT: An example Github Actions workflow
 # AUTHORITY
-our $VERSION = '0.0102';
+our $VERSION = '0.0103';
 
 use Moose;
 with qw/
