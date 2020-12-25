@@ -38,7 +38,6 @@
             "Badge::Depot::Plugin::Kwalitee" : "0",
             "Badge::Depot::Plugin::Perl" : "0",
             "Dist::Zilla" : "6.015",
-            "Dist::Zilla::Plugin::Author::CSSON::GithubActions" : "0",
             "Dist::Zilla::Plugin::Authority" : "1.009",
             "Dist::Zilla::Plugin::BumpVersionAfterRelease::Transitional" : "0.009",
             "Dist::Zilla::Plugin::ChangeStats::Dependencies::Git" : "0.0200",
@@ -115,7 +114,6 @@
       "runtime" : {
          "requires" : {
             "Dist::Zilla::File::InMemory" : "0",
-            "Dist::Zilla::Plugin::Author::CSSON::GithubActions" : "0",
             "Dist::Zilla::Role::FileGatherer" : "0",
             "Dist::Zilla::Role::Plugin" : "0",
             "File::ShareDir" : "1.102",

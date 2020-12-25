@@ -2,7 +2,6 @@
 
 on runtime => sub {
     requires 'Dist::Zilla::File::InMemory' => '0';
-    requires 'Dist::Zilla::Plugin::Author::CSSON::GithubActions' => '0';
     requires 'Dist::Zilla::Role::FileGatherer' => '0';
     requires 'Dist::Zilla::Role::Plugin' => '0';
     requires 'File::ShareDir' => '1.102';
@@ -44,7 +43,6 @@ on develop => sub {
     requires 'Badge::Depot::Plugin::Kwalitee' => '0';
     requires 'Badge::Depot::Plugin::Perl' => '0';
     requires 'Dist::Zilla' => '6.015';
-    requires 'Dist::Zilla::Plugin::Author::CSSON::GithubActions' => '0';
     requires 'Dist::Zilla::Plugin::Authority' => '1.009';
     requires 'Dist::Zilla::Plugin::BumpVersionAfterRelease::Transitional' => '0.009';
     requires 'Dist::Zilla::Plugin::ChangeStats::Dependencies::Git' => '0.0200';
