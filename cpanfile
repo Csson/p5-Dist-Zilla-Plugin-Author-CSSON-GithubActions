@@ -1,4 +1,4 @@
-# This file was auto-generated from iller.yaml by Dist::Iller on 2020-12-25 12:43:52 UTC.
+# This file was auto-generated from iller.yaml by Dist::Iller on 2020-12-25 18:16:08 UTC.
 
 on runtime => sub {
     requires 'Dist::Zilla::File::InMemory' => '0';
@@ -76,6 +76,7 @@ on develop => sub {
     requires 'Dist::Zilla::Plugin::PodSyntaxTests' => '0';
     requires 'Dist::Zilla::Plugin::PodWeaver' => '4.006';
     requires 'Dist::Zilla::Plugin::Prereqs' => '0';
+    requires 'Dist::Zilla::Plugin::PromptIfStale' => '0.057';
     requires 'Dist::Zilla::Plugin::Readme' => '0';
     requires 'Dist::Zilla::Plugin::ReadmeAnyFromPod' => '0.163250';
     requires 'Dist::Zilla::Plugin::RewriteVersion::Transitional' => '0.007';
@@ -113,6 +114,6 @@ on develop => sub {
     requires 'Test::Warnings' => '0.026';
 };
 on develop => sub {
-    suggests 'Dist::Iller' => '0.1408';
-    suggests 'Dist::Iller::Config::Author::CSSON' => '0.0326';
+    suggests 'Dist::Iller' => '0.1409';
+    suggests 'Dist::Iller::Config::Author::CSSON' => '0.0327';
 };

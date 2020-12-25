@@ -1,6 +1,6 @@
-# This file was auto-generated from iller.yaml by Dist::Iller on 2020-12-24 18:00:09 UTC.
+# This file was auto-generated from iller.yaml by Dist::Iller on 2020-12-25 18:17:24 UTC.
 # The following configs were used:
-# * Dist::Iller::Config::Author::CSSON: 0.0326
+# * Dist::Iller::Config::Author::CSSON: 0.0327
 
 /.build
 /_build*
@@ -9,3 +9,4 @@ MYMETA.*
 !META.json
 /.prove
 /Dist-Zilla-Plugin-Author-CSSON-GithubActions-*
+.coverhistory.json
