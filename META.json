@@ -114,6 +114,7 @@
       "runtime" : {
          "requires" : {
             "Dist::Zilla::File::InMemory" : "0",
+            "Dist::Zilla::Plugin::Author::CSSON::GithubActions" : "0",
             "Dist::Zilla::Role::FileGatherer" : "0",
             "Dist::Zilla::Role::Plugin" : "0",
             "File::ShareDir" : "1.102",
@@ -742,11 +743,6 @@
             "class" : "Dist::Zilla::Plugin::Clean",
             "name" : "Clean",
             "version" : "0.07"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Author::CSSON::GithubActions",
-            "name" : "Author::CSSON::GithubActions",
-            "version" : "0.0100"
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereqs",

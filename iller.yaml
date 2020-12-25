@@ -45,9 +45,6 @@ plugins:
 
   - +remove_plugin: PromptIfStale
 
-  - +plugin: Author::CSSON::GithubActions
-    profile_class: Author::CSSON::GithubActions::BaseWorkflow
-
 ---
 doctype: weaver
 
