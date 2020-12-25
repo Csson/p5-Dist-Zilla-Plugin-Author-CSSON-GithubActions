@@ -8,7 +8,7 @@ use Dist::Zilla::Plugin::Author::CSSON::GithubActions;
 use Test::Exception;
 use Test::DZil;
 use Path::Tiny;
-use YAML::XS qw/Load/;
+use YAML::XS qw/LoadFile/;
 
 ok 1, 'Loaded';
 
@@ -18,8 +18,7 @@ my $tests = [
         settings => {},
         check => sub {
             my $tzil = shift;
-            $tzil->release;
-            my $yaml = Load($tzil->slurp_file('build/.github/workflows/test-workflow-output.yml'));
+            my $yaml = shift;
             is_deeply $yaml->{'on'}{'push'}{'branches'}, ['*'] or diag explain $yaml;
         },
     },
@@ -29,7 +28,7 @@ my $tests = [
         },
         check => sub {
             my $tzil = shift;
-            my $yaml = Load($tzil->slurp_file('build/.github/workflows/test-workflow-output.yml'));
+            my $yaml = shift;
             is_deeply $yaml->{'on'}{'push'}{'branches'}, [] or diag explain $yaml;
             is_deeply $yaml->{'on'}{'pull_request'}{'branches'}, ['*'] or diag explain $yaml;
         }
@@ -40,7 +39,7 @@ my $tests = [
         },
         check => sub {
             my $tzil = shift;
-            my $yaml = Load($tzil->slurp_file('build/.github/workflows/test-workflow-output.yml'));
+            my $yaml = shift;
             is_deeply $yaml->{'on'}{'push'}{'branches'}, ['*'] or diag explain $yaml;
             is_deeply $yaml->{'on'}{'pull_request'}{'branches'}, [] or diag explain $yaml;
         }
@@ -51,7 +50,7 @@ my $tests = [
         },
         check => sub {
             my $tzil = shift;
-            my $yaml = Load($tzil->slurp_file('build/.github/workflows/test-workflow-output.yml'));
+            my $yaml = shift;
             is_deeply $yaml->{'on'}{'pull_request'}{'branches'}, ['*', 'this', 'that'], or diag explain $yaml;
         }
     },
@@ -62,7 +61,7 @@ my $tests = [
         },
         check => sub {
             my $tzil = shift;
-            my $yaml = Load($tzil->slurp_file('build/.github/workflows/test-workflow-output.yml'));
+            my $yaml = shift;
             is_deeply $yaml->{'on'}{'pull_request'}{'branches'}, ['this', 'that'], or diag explain $yaml;
         }
     },
@@ -70,15 +69,12 @@ my $tests = [
 
 for my $test (@{ $tests }) {
     my $tzil = make_tzil($test->{'settings'});
-    lives_ok(sub { $tzil }, 'Distro built')  || explain $tzil->log_messages;
+    my $yaml = LoadFile(path($tzil->tempdir)->child('source/.github/workflows/test-workflow-output.yml'));
 
     if (exists $test->{'check'}) {
-        $test->{'check'}($tzil);
+        $test->{'check'}($tzil, $yaml);
     }
 }
-
-
-
 
 done_testing;
 
@@ -107,5 +103,7 @@ sub make_tzil {
         },
     );
     $tzil->build;
+
+    lives_ok(sub { $tzil }, 'Distro built')  || explain $tzil->log_messages;
     return $tzil;
 }

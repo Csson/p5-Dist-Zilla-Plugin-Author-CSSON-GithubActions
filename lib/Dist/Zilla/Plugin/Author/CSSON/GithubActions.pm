@@ -21,6 +21,7 @@ use Dist::Zilla::File::InMemory;
 with qw/
     Dist::Zilla::Role::Plugin
     Dist::Zilla::Role::FileGatherer
+    Dist::Zilla::Role::FilePruner
 /;
 
 sub mvp_multivalue_args {
@@ -144,6 +145,16 @@ sub gather_files {
     });
     $self->add_file($generated_file);
 
+}
+
+sub prune_files {
+    my $self = shift;
+    $self->log(['Pruning...']);
+
+    my $yaml = $self->_prepare_yaml;
+    my $file = first { $_->name eq $self->filepath($yaml) } @{ $self->zilla->files };
+
+    $self->zilla->prune_file($file) if $file;
 }
 
 __PACKAGE__->meta->make_immutable;
