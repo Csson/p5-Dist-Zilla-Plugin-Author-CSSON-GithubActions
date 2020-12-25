@@ -16,11 +16,37 @@ prereqs:
   runtime:
     requires:
       - perl: 5.010000
+      - Dist::Zilla::File::InMemory
+      - Dist::Zilla::Role::Plugin
+      - Dist::Zilla::Role::FileGatherer
+      - Dist::Zilla::Plugin::Author::CSSON::GithubActions
+      - File::ShareDir
+      - List::AllUtils
+      - Module::Load
+      - Moose
+      - Moose::Role
+      - namespace::autoclean
+      - Path::Class::File
+      - Path::Tiny
+      - Test::Exception
+      - Try::Tiny
+      - Types::Standard
+      - YAML::XS
+  test:
+    requires:
+      - Test::DZil
+      - Test::Exception
+      - Test::DZil
+      - Path::Tiny
+      - YAML::XS
 
 plugins:
   - +config: Author::CSSON
 
   - +remove_plugin: PromptIfStale
+
+  - +plugin: Author::CSSON::GithubActions
+    profile_class: Author::CSSON::GithubActions::BaseWorkflow
 
 ---
 doctype: weaver
