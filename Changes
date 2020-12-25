@@ -4,6 +4,7 @@ Revision history for Dist-Zilla-Plugin-Author-CSSON-GithubActions
  [API Changes]
 
  [Bug Fixes]
+ - Don't include the generated workflow file in distributions that uses this plugin
 
  [Documentation]
 
