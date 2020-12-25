@@ -4,7 +4,6 @@ Revision history for Dist-Zilla-Plugin-Author-CSSON-GithubActions
  [API Changes]
 
  [Bug Fixes]
- - It was wrongfully listed as a prereq for itself, that has been fixed
 
  [Documentation]
 
@@ -19,6 +18,14 @@ Revision history for Dist-Zilla-Plugin-Author-CSSON-GithubActions
  [Stats & Dependency Changes]
 
  [Testing]
+
+0.0103 2020-12-25T22:36:10Z UTC
+ [Bug Fixes]
+ - It was wrongfully listed as a prereq for itself, that has been fixed
+
+ [Stats & Dependency Changes]
+ - 4 files changed, 3 insertions(+), 4 deletions(-)
+ - (run req) - Dist::Zilla::Plugin::Author::CSSON::GithubActions
 
 0.0102 2020-12-25T20:57:32Z UTC
  [Bug Fixes]
