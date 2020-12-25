@@ -6,7 +6,7 @@ package Dist::Zilla::Plugin::Author::CSSON::GithubActions::Role::Workflow;
 
 # ABSTRACT: Role used to define a GithubActions workflow
 # AUTHORITY
-our $VERSION = '0.0103';
+our $VERSION = '0.0104';
 
 use Moose::Role;
 use YAML::XS qw/Load/;
