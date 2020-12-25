@@ -4,7 +4,6 @@ Revision history for Dist-Zilla-Plugin-Author-CSSON-GithubActions
  [API Changes]
 
  [Bug Fixes]
- - Don't include the generated workflow file in distributions that uses this plugin
 
  [Documentation]
 
@@ -19,6 +18,14 @@ Revision history for Dist-Zilla-Plugin-Author-CSSON-GithubActions
  [Stats & Dependency Changes]
 
  [Testing]
+
+0.0102 2020-12-25T20:57:32Z UTC
+ [Bug Fixes]
+ - Don't include the generated workflow file in distributions that uses
+   this plugin
+
+ [Stats & Dependency Changes]
+ - 4 files changed, 24 insertions(+), 15 deletions(-)
 
 0.0101 2020-12-25T19:49:39Z UTC
  [Bug Fixes]
