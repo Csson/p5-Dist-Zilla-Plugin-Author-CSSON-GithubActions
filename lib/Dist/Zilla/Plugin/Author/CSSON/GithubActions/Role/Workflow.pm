@@ -15,8 +15,6 @@ use File::ShareDir qw/dist_dir/;
 use Try::Tiny;
 requires 'filepath';
 
-sub main_module { 'Dist::Zilla::Plugin::Author::CSSON::GithubActions' }
-
 sub file_location {
     my $self = shift;
     my $package = $self->main_module;
@@ -24,7 +22,7 @@ sub file_location {
 
     my $dir = path('.');
     try {
-        $dir = path(dist_dir($package))->abspath;
+        $dir = path(dist_dir($package));
     }
     finally { };
 

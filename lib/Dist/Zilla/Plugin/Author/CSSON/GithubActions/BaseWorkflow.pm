@@ -13,7 +13,9 @@ with qw/
     Dist::Zilla::Plugin::Author::CSSON::GithubActions::Role::Workflow
 /;
 
-sub filepath { 'share/base-workflow.yml' }
+sub main_module { 'Dist::Zilla::Plugin::Author::CSSON::GithubActions' }
+
+sub filepath { 'base-workflow.yml' }
 
 1;
 
