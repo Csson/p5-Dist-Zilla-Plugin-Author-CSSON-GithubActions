@@ -43,7 +43,7 @@ prereqs:
 plugins:
   - +config: Author::CSSON
 
-  - +remove_plugin: PromptIfStale
+  - +remove_plugin: Author::CSSON::GithubActions
 
 ---
 doctype: weaver
