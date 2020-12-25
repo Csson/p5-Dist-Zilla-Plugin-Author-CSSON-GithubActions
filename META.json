@@ -153,15 +153,15 @@
    "provides" : {
       "Dist::Zilla::Plugin::Author::CSSON::GithubActions" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/CSSON/GithubActions.pm",
-         "version" : "0.0100"
+         "version" : "0.0101"
       },
       "Dist::Zilla::Plugin::Author::CSSON::GithubActions::BaseWorkflow" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/CSSON/GithubActions/BaseWorkflow.pm",
-         "version" : "0.0100"
+         "version" : "0.0101"
       },
       "Dist::Zilla::Plugin::Author::CSSON::GithubActions::Role::Workflow" : {
          "file" : "lib/Dist/Zilla/Plugin/Author/CSSON/GithubActions/Role/Workflow.pm",
-         "version" : "0.0100"
+         "version" : "0.0101"
       }
    },
    "release_status" : "stable",
@@ -176,7 +176,7 @@
          "web" : "https://github.com/Csson/p5-Dist-Zilla-Plugin-Author-CSSON-GithubActions"
       }
    },
-   "version" : "0.0100",
+   "version" : "0.0101",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.020001"
@@ -675,7 +675,7 @@
                   "branch" : null,
                   "changelog" : "Changes",
                   "signed" : 0,
-                  "tag" : "0.0100",
+                  "tag" : "0.0101",
                   "tag_format" : "%v",
                   "tag_message" : "Release %v%n%n%c"
                },
