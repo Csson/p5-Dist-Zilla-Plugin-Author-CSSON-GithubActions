@@ -21,7 +21,6 @@ prereqs:
       - Dist::Zilla::Role::FileGatherer
       - File::ShareDir
       - List::AllUtils
-      - Module::Load
       - Moose
       - Moose::Role
       - namespace::autoclean
