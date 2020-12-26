@@ -4,7 +4,6 @@ Revision history for Dist-Zilla-Plugin-Author-CSSON-GithubActions
  [API Changes]
 
  [Bug Fixes]
- - Fix faulty package name
 
  [Documentation]
 
@@ -19,6 +18,13 @@ Revision history for Dist-Zilla-Plugin-Author-CSSON-GithubActions
  [Stats & Dependency Changes]
 
  [Testing]
+
+0.0105 2020-12-26T13:07:13Z UTC
+ [Bug Fixes]
+ - Fix faulty package name
+
+ [Stats & Dependency Changes]
+ - 3 files changed, 7 insertions(+), 4 deletions(-)
 
 0.0104 2020-12-26T12:56:52Z UTC
  [Other Changes]
