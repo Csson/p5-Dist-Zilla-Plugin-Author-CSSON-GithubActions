@@ -2,7 +2,7 @@ use 5.14.0;
 use strict;
 use warnings;
 
-package Dist::Zilla::Role::Author::CSSON::GithubActions;
+package Dist::Zilla::Plugin::Author::CSSON::GithubActions;
 
 # ABSTRACT: Ease creation of common Github Actions workflows
 # AUTHORITY
