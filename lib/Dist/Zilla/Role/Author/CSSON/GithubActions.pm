@@ -211,6 +211,8 @@ In dist.ini:
 This role exposes some parameters creates a Github Actions workflow file in C<.github/workflows>.
 
 Note that, if you plan to use the customizations shown above, the following settings in the workflow YAML file are expected to be defined as lists and not strings:
+
+=for :list
 * C<on.push.branches>
 * C<on.pull_request.branches>
 * C<jobs.perl-job.strategy.matrix.os>
@@ -219,6 +221,7 @@ Note that, if you plan to use the customizations shown above, the following sett
 Also, it is assumed that the step where the distribution is tested is named C<perl-job>.
 
 The generated workflow file will be created in C<.github/workflows>. The filename will be (in order of priority):
+
 =for :list
 * The value of the C<filename> parameter in C<dist.ini>
 * The value of the C<filename> key in the C<$workflow.yml> file
