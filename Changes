@@ -12,6 +12,8 @@ Revision history for Dist-Zilla-Plugin-Author-CSSON-GithubActions
  [New Features]
 
  [Other Changes]
+ - Rewritten so that GithubActions is now a role, and each workflow class will be their own plugin. This makes it much easier
+   to add custom parameters adapted for each workflow.
 
  [Requirements]
 

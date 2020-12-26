@@ -1,4 +1,4 @@
-# This file was auto-generated from iller.yaml by Dist::Iller on 2020-12-25 22:33:55 UTC.
+# This file was auto-generated from iller.yaml by Dist::Iller on 2020-12-26 11:11:13 UTC.
 
 on runtime => sub {
     requires 'Dist::Zilla::File::InMemory' => '0';
@@ -6,7 +6,6 @@ on runtime => sub {
     requires 'Dist::Zilla::Role::Plugin' => '0';
     requires 'File::ShareDir' => '1.102';
     requires 'List::AllUtils' => '0';
-    requires 'Module::Load' => '0.26';
     requires 'Moose' => '2.1803';
     requires 'Moose::Role' => '0';
     requires 'Path::Class::File' => '0';

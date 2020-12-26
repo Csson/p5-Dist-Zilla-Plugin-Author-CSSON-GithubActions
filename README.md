@@ -1,30 +1,25 @@
 # NAME
 
-Dist::Zilla::Plugin::Author::CSSON::GithubActions - Ease creation of common Github Actions workflows
+Dist::Zilla::Role::Author::CSSON::GithubActions - Ease creation of common Github Actions workflows
 
 <div>
     <p>
     <img src="https://img.shields.io/badge/perl-5.10+-blue.svg" alt="Requires Perl 5.10+" />
-    <a href="http://cpants.cpanauthors.org/release/CSSON/Dist-Zilla-Plugin-Author-CSSON-GithubActions-0.0103"><img src="http://badgedepot.code301.com/badge/kwalitee/CSSON/Dist-Zilla-Plugin-Author-CSSON-GithubActions/0.0103" alt="Distribution kwalitee" /></a>
-    <a href="http://matrix.cpantesters.org/?dist=Dist-Zilla-Plugin-Author-CSSON-GithubActions%200.0103"><img src="http://badgedepot.code301.com/badge/cpantesters/Dist-Zilla-Plugin-Author-CSSON-GithubActions/0.0103" alt="CPAN Testers result" /></a>
-    <img src="https://img.shields.io/badge/coverage-91.7%-yellow.svg" alt="coverage 91.7%" />
+    <a href="http://cpants.cpanauthors.org/release/CSSON/Dist-Zilla-Plugin-Author-CSSON-GithubActions-0.0104"><img src="http://badgedepot.code301.com/badge/kwalitee/CSSON/Dist-Zilla-Plugin-Author-CSSON-GithubActions/0.0104" alt="Distribution kwalitee" /></a>
+    <a href="http://matrix.cpantesters.org/?dist=Dist-Zilla-Plugin-Author-CSSON-GithubActions%200.0104"><img src="http://badgedepot.code301.com/badge/cpantesters/Dist-Zilla-Plugin-Author-CSSON-GithubActions/0.0104" alt="CPAN Testers result" /></a>
+    <img src="https://img.shields.io/badge/coverage-88.8%-orange.svg" alt="coverage 88.8%" />
     </p>
 </div>
 
 # VERSION
 
-Version 0.0103, released 2020-12-25.
+Version 0.0104, released 2020-12-26.
 
 # SYNOPSIS
 
 In dist.ini:
 
-    [Author::CSSON::GithubActions]
-    ; workflow_class is mandatory (Dist::Zilla::Plugin is prepended when loading it)
-    workflow_class = Author::CSSON::GithubActions::BaseWorkflow
-
-    ; the rest is optional, and customizes the workflow defined in the workflow_class
-
+    [Author::CSSON::GithubActions::Workflow::TestWithMakefile]
     ; set on.push.branches to an empty list
     clear_on_push_branches = 1
 
@@ -50,25 +45,21 @@ In dist.ini:
 
 # STATUS
 
-This is very early in development.
+This plugin is very early in development. It might be released in a non-author namespace at a later stage.
 
 # DESCRIPTION
 
-This plugin creates a Github Actions workflow file in `.github/workflows`.
+This distribution is a framework for creating re-usable Github Actions workflows. GitHub's documentation about Actions is located at [http://docs.github.com/en/free-pro-team@latest/actions](http://docs.github.com/en/free-pro-team@latest/actions).
 
-Note that, if you plan to use the customizations shown above, the following settings in the workflow YAML file are expected to be defined as lists and not strings:
-\* `on.push.branches`
-\* `on.pull_request.branches`
-\* `jobs.perl-job.strategy.matrix.os`
-\* `jobs.perl-job.strategy.matrix.perl-version`
+The core of it is the [Dist::Zilla::Role::Author::CSSON::GithubActions](https://metacpan.org/pod/Dist::Zilla::Role::Author::CSSON::GithubActions) role.
 
-See [Dist::Zilla::Plugin::Author::CSSON::GithubActions::Role::Workflow](https://metacpan.org/pod/Dist::Zilla::Plugin::Author::CSSON::GithubActions::Role::Workflow) for how to define a workflow.
-
-See [Dist::Zilla::Plugin::Author::CSSON::GithubActions::BaseWorkflow](https://metacpan.org/pod/Dist::Zilla::Plugin::Author::CSSON::GithubActions::BaseWorkflow) for an example workflow.
+Included in this distribution is an example workflow, [Dist::Zilla::Plugin::Author::CSSON::GithubActions::Workflow::TestWithMakefile](https://metacpan.org/pod/Dist::Zilla::Plugin::Author::CSSON::GithubActions::Workflow::TestWithMakefile).
 
 # SEE ALSO
 
 - [Dist::Zilla::TravisCI](https://metacpan.org/pod/Dist::Zilla::TravisCI)
+- [http://docs.github.com/en/free-pro-team@latest/actions](http://docs.github.com/en/free-pro-team@latest/actions)
+- [https://perlmaven.com/setup-github-actions](https://perlmaven.com/setup-github-actions)
 
 # SOURCE
 
