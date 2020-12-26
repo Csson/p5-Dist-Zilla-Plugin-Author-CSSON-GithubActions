@@ -5,12 +5,8 @@ use warnings;
 package Dist::Zilla::Plugin::TestForGithubActions;
 
 use Moose;
-with qw/
-    Dist::Zilla::Plugin::Author::CSSON::GithubActions::Role::Workflow
-/;
+extends 'Dist::Zilla::Plugin::Author::CSSON::GithubActions::Workflow::TestWithMakefile';
 
-sub main_module { 'Dist::Zilla::Plugin::TestForGithubActions' }
-
-sub filepath { 'share/test-workflow.yml' }
+sub workflow_filename { 'share/test-workflow.yml' }
 
 1;

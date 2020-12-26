@@ -19,7 +19,7 @@ my $tests = [
         check => sub {
             my $tzil = shift;
             my $yaml = shift;
-            is_deeply $yaml->{'on'}{'push'}{'branches'}, ['*'] or diag explain $yaml;
+            is_deeply $yaml->{'on'}{'push'}{'branches'}, ['*'], 'Default push branches' or diag explain $yaml;
         },
     },
     {
@@ -29,8 +29,8 @@ my $tests = [
         check => sub {
             my $tzil = shift;
             my $yaml = shift;
-            is_deeply $yaml->{'on'}{'push'}{'branches'}, [] or diag explain $yaml;
-            is_deeply $yaml->{'on'}{'pull_request'}{'branches'}, ['*'] or diag explain $yaml;
+            is_deeply $yaml->{'on'}{'push'}{'branches'}, [], 'Push branches cleared' or diag explain $yaml;
+            is_deeply $yaml->{'on'}{'pull_request'}{'branches'}, ['*'], 'PR branches remains as default' or diag explain $yaml;
         }
     },
     {
@@ -40,8 +40,8 @@ my $tests = [
         check => sub {
             my $tzil = shift;
             my $yaml = shift;
-            is_deeply $yaml->{'on'}{'push'}{'branches'}, ['*'] or diag explain $yaml;
-            is_deeply $yaml->{'on'}{'pull_request'}{'branches'}, [] or diag explain $yaml;
+            is_deeply $yaml->{'on'}{'push'}{'branches'}, ['*'], 'Push branches remains as default' or diag explain $yaml;
+            is_deeply $yaml->{'on'}{'pull_request'}{'branches'}, [], 'PR branches cleared' or diag explain $yaml;
         }
     },
     {
@@ -51,7 +51,7 @@ my $tests = [
         check => sub {
             my $tzil = shift;
             my $yaml = shift;
-            is_deeply $yaml->{'on'}{'pull_request'}{'branches'}, ['*', 'this', 'that'], or diag explain $yaml;
+            is_deeply $yaml->{'on'}{'pull_request'}{'branches'}, ['*', 'this', 'that'], 'PR branches added' or diag explain $yaml;
         }
     },
     {
@@ -62,14 +62,25 @@ my $tests = [
         check => sub {
             my $tzil = shift;
             my $yaml = shift;
-            is_deeply $yaml->{'on'}{'pull_request'}{'branches'}, ['this', 'that'], or diag explain $yaml;
+            is_deeply $yaml->{'on'}{'pull_request'}{'branches'}, ['this', 'that'], 'PR branches replaced' or diag explain $yaml;
         }
     },
+    {
+        settings => {
+            run_before => 'apt-get install nano',
+        },
+        check => sub {
+            my $tzil = shift;
+            my $yaml = shift;
+            is $yaml->{'jobs'}{'perl-job'}{'steps'}[1]{'run'}, 'apt-get install nano', 'Custom run_before parameter' or diag explain $yaml;
+            is scalar @{ $yaml->{'jobs'}{'perl-job'}{'steps'} }, 5, 'Correct number of steps after adding a custom step' or diag explain $yaml;
+        }
+    }
 ];
 
 for my $test (@{ $tests }) {
     my $tzil = make_tzil($test->{'settings'});
-    my $yaml = LoadFile(path($tzil->tempdir)->child('source/.github/workflows/test-workflow-output.yml'));
+    my $yaml = LoadFile(path($tzil->tempdir)->child('source/.github/workflows/workflow-test.yml'));
 
     if (exists $test->{'check'}) {
         $test->{'check'}($tzil, $yaml);
@@ -82,8 +93,8 @@ sub make_tzil {
     my %settings = %{ shift() };
     my $ini = simple_ini(
         { version => '0.0002' },
-        [ 'Author::CSSON::GithubActions', {
-            workflow_class => 'TestForGithubActions',
+        [ 'TestForGithubActions', {
+            filename => 'workflow-test.yml',
             %settings,
         }],
         qw/
@@ -97,8 +108,7 @@ sub make_tzil {
         {
             add_files => {
                 'source/dist.ini' => $ini,
-                'source/share/test-workflow.yml' => path('t/corpus/test-workflow.yml')->slurp,
-                'source/t/corpus/lib/Dist/Zilla/Plugin/TestForGithubActions.pm' => path('t/corpus/lib/Dist/Zilla/Plugin/TestForGithubActions.pm')->slurp,
+                'source/share/test-workflow.yml' => path('share/workflow-test-with-makefile.yml')->slurp,
             },
         },
     );
