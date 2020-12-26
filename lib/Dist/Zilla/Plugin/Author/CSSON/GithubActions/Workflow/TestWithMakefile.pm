@@ -34,6 +34,8 @@ sub mvp_multivalue_args {
 
 sub workflow_filename { 'workflow-test-with-makefile.yml' }
 
+sub distribution_name { 'Dist-Zilla-Plugin-Author-CSSON-GithubActions' }
+
 sub parse_custom_parameters {
     my $self = shift;
     my $yaml = shift;

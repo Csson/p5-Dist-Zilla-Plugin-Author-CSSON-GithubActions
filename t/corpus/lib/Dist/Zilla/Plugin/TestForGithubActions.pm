@@ -9,4 +9,6 @@ extends 'Dist::Zilla::Plugin::Author::CSSON::GithubActions::Workflow::TestWithMa
 
 sub workflow_filename { 'share/test-workflow.yml' }
 
+sub distribution_name { 'Dist-Zilla-Plugin-TestForGithubActions' }
+
 1;

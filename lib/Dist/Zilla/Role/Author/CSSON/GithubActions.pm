@@ -100,7 +100,12 @@ has generated_yaml => (
 # Override this in the Workflow if needed
 sub parse_custom_parameters { }
 
-sub distribution_name { shift->zilla->name }
+sub distribution_name {
+    my $self = shift;
+    my $name = $self->meta->name;
+    $name =~ s/::/-/g;
+    return $name;
+}
 
 sub _prepare {
     my $self = shift;
