@@ -9,8 +9,9 @@ package Dist::Zilla::Plugin::Author::CSSON::GithubActions::Workflow::TestWithMak
 our $VERSION = '0.0104';
 
 use Moose;
+use Types::Standard qw/ArrayRef/;
 with qw/
-    Dist::Zilla::Plugin::Author::CSSON::GithubActions
+    Dist::Zilla::Role::Author::CSSON::GithubActions
 /;
 
 has run_before => (
@@ -26,22 +27,25 @@ has run_before => (
 );
 
 sub mvp_multivalue_args {
-    my $self = shift;
-    my @defaults = @_;
-
-    return @defaults, qw/
+    qw/
         run_before
     /;
 };
 
 sub workflow_filename { 'workflow-test-with-makefile.yml' }
 
-#sub main_module { 'Dist::Zilla::Plugin::Author::CSSON::GithubActions' }
+sub parse_custom_parameters {
+    my $self = shift;
+    my $yaml = shift;
 
-#sub filepath { 'base-workflow.yml' }
+    if ($self->has_run_before) {
+        splice @{ $yaml->{'jobs'}{'perl-job'}{'steps'} }, 1, 0, map { { run => $_ } } $self->all_run_before;
+    }
+    return $yaml;
 
+}
 
-
+__PACKAGE__->meta->make_immutable;
 
 1;
 
@@ -51,12 +55,15 @@ sub workflow_filename { 'workflow-test-with-makefile.yml' }
 
 In dist.ini:
 
-    [Author::CSSON::GithubActions]
-    workflow_class = Author::CSSON::GithubActions::BaseWorkflow
+    [Author::CSSON::GithubActions::Workflow::TestWithMakefile]
+    run_before = apt-get install nano
 
 =head1 DESCRIPTION
 
 This is an example workflow for L<Dist::Zilla::Plugin::Author::CSSON::GithubActions>. It is based
 on L<https://perlmaven.com/setup-github-actions>.
 
-The actual workflow is defined in C<share/base-workflow.yml>.
+The actual workflow is defined in C<share/workflow-test-with-makefile.yml>.
+
+In addition to the parameters defined in L<Dist::Zilla::Role::Author::CSSON::GithubActions>, this workflow class adds one
+additional parameter: C<run_before>. This parameter allows for the insertion of one or more steps before any Perl testing is being done.
