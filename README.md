@@ -5,15 +5,15 @@ Dist::Zilla::Plugin::Author::CSSON::GithubActions - Ease creation of common Gith
 <div>
     <p>
     <img src="https://img.shields.io/badge/perl-5.10+-blue.svg" alt="Requires Perl 5.10+" />
-    <a href="http://cpants.cpanauthors.org/release/CSSON/Dist-Zilla-Plugin-Author-CSSON-GithubActions-0.0105"><img src="http://badgedepot.code301.com/badge/kwalitee/CSSON/Dist-Zilla-Plugin-Author-CSSON-GithubActions/0.0105" alt="Distribution kwalitee" /></a>
-    <a href="http://matrix.cpantesters.org/?dist=Dist-Zilla-Plugin-Author-CSSON-GithubActions%200.0105"><img src="http://badgedepot.code301.com/badge/cpantesters/Dist-Zilla-Plugin-Author-CSSON-GithubActions/0.0105" alt="CPAN Testers result" /></a>
-    <img src="https://img.shields.io/badge/coverage-88.8%-orange.svg" alt="coverage 88.8%" />
+    <a href="http://cpants.cpanauthors.org/release/CSSON/Dist-Zilla-Plugin-Author-CSSON-GithubActions-0.0106"><img src="http://badgedepot.code301.com/badge/kwalitee/CSSON/Dist-Zilla-Plugin-Author-CSSON-GithubActions/0.0106" alt="Distribution kwalitee" /></a>
+    <a href="http://matrix.cpantesters.org/?dist=Dist-Zilla-Plugin-Author-CSSON-GithubActions%200.0106"><img src="http://badgedepot.code301.com/badge/cpantesters/Dist-Zilla-Plugin-Author-CSSON-GithubActions/0.0106" alt="CPAN Testers result" /></a>
+    <img src="https://img.shields.io/badge/coverage-84.6%-orange.svg" alt="coverage 84.6%" />
     </p>
 </div>
 
 # VERSION
 
-Version 0.0105, released 2020-12-26.
+Version 0.0106, released 2020-12-26.
 
 # SYNOPSIS
 
