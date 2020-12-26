@@ -6,7 +6,7 @@ package Dist::Zilla::Plugin::Author::CSSON::GithubActions::Workflow::TestWithMak
 
 # ABSTRACT: Workflow for testing with Makefile.PL
 # AUTHORITY
-our $VERSION = '0.0106';
+our $VERSION = '0.0107';
 
 use Moose;
 use Types::Standard qw/ArrayRef/;
