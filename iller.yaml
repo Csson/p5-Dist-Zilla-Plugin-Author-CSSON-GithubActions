@@ -15,7 +15,7 @@ header:
 prereqs:
   runtime:
     requires:
-      - perl: 5.010000
+      - perl: 5.014000
       - Dist::Zilla::File::InMemory
       - Dist::Zilla::Role::Plugin
       - Dist::Zilla::Role::FileGatherer
@@ -28,6 +28,7 @@ prereqs:
       - Path::Tiny
       - Test::Exception
       - Try::Tiny
+      - Types::Path::Tiny
       - Types::Standard
       - YAML::XS
   test:
@@ -41,7 +42,7 @@ prereqs:
 plugins:
   - +config: Author::CSSON
 
-  - +remove_plugin: Author::CSSON::GithubActions
+  - +remove_plugin: Author::CSSON::GithubActions::Workflow::TestWithMakefile
 
 ---
 doctype: weaver
