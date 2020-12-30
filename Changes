@@ -14,6 +14,7 @@ Revision history for Dist-Zilla-Plugin-Author-CSSON-GithubActions
  [Other Changes]
 
  [Requirements]
+ - Added missing prereq, fixes #2 (thanks SREZIC!)
 
  [Stats & Dependency Changes]
 
