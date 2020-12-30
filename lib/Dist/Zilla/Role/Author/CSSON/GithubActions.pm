@@ -6,7 +6,7 @@ package Dist::Zilla::Role::Author::CSSON::GithubActions;
 
 # ABSTRACT: Role for Github Actions workflows
 # AUTHORITY
-our $VERSION = '0.0107';
+our $VERSION = '0.0108';
 
 use Moose::Role;
 use namespace::autoclean;

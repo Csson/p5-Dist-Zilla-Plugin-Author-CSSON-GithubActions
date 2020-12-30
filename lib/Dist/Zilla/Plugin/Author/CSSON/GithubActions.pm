@@ -6,7 +6,7 @@ package Dist::Zilla::Plugin::Author::CSSON::GithubActions;
 
 # ABSTRACT: Ease creation of common Github Actions workflows
 # AUTHORITY
-our $VERSION = '0.0107';
+our $VERSION = '0.0108';
 
 =pod
 
