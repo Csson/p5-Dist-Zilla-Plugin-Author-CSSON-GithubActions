@@ -1,15 +1,14 @@
 ---
+doctype: global
+
+distribution_name: Dist-Zilla-Plugin-Author-CSSON-GithubActions
+---
 # This file is used together with Dist::Iller and
 # Dist::Iller::Config::Author::CSSON to generate
 # dist.ini and weaver.ini.
 doctype: dist
 
 header:
-  name: Dist-Zilla-Plugin-Author-CSSON-GithubActions
-  author:
-    - Erik Carlsson <info@code301.com>
-  license: Perl_5
-  copyright_holder: Erik Carlsson
   copyright_year: 2020
 
 prereqs:
@@ -57,6 +56,3 @@ doctype: cpanfile
 doctype: gitignore
 
 config: Author::CSSON
-
-always:
- - /Dist-Zilla-Plugin-Author-CSSON-GithubActions-*
